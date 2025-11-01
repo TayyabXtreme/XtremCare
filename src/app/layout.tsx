@@ -15,8 +15,8 @@ import {
 const outfit = Outfit({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 export const metadata = {
-    title: "XtremCart - Shop Smarter, Live Better",
-    description: "XtremCart - Your ultimate destination for the latest gadgets and electronics. Developed by Muhammad Tayyab.",
+    title: "HealthMate - Sehat ka Smart Dost | AI-Powered Health Companion",
+    description: "HealthMate - Your AI-powered personal health vault. Upload medical reports, get instant bilingual AI analysis in English & Roman Urdu. Powered by Gemini AI. Developed by Muhammad Tayyab for SMIT Coding Night.",
 };
 
 export default function RootLayout({ children }:{children:ReactNode}) {
