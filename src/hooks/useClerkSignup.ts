@@ -21,8 +21,9 @@ export const useClerkSignup = () => {
       await signUp.prepareEmailAddressVerification({ strategy: "email_code" });
       toast.success("Verification code sent to your email!");
       setPendingVerification(true);
-    } catch (err: any) {
-      toast.error(err.errors?.[0]?.message || "Signup failed!");
+    } catch (err: unknown) {
+      const error = err as { errors?: Array<{ message: string }> };
+      toast.error(error.errors?.[0]?.message || "Signup failed!");
     }
   };
 
@@ -40,8 +41,9 @@ export const useClerkSignup = () => {
         setPendingVerification(false);
         window.location.href = "/sync";
       }
-    } catch (err: any) {
-      toast.error(err.errors?.[0]?.message || "Invalid code!");
+    } catch (err: unknown) {
+      const error = err as { errors?: Array<{ message: string }> };
+      toast.error(error.errors?.[0]?.message || "Invalid code!");
     }
   };
 
@@ -54,8 +56,9 @@ export const useClerkSignup = () => {
         redirectUrl: "/sso-callback",
         redirectUrlComplete: "/sync",
       });
-    } catch (err: any) {
-      toast.error(err.errors?.[0]?.message || "OAuth signup failed!");
+    } catch (err: unknown) {
+      const error = err as { errors?: Array<{ message: string }> };
+      toast.error(error.errors?.[0]?.message || "OAuth signup failed!");
     }
   };
 

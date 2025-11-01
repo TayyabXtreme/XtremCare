@@ -29,8 +29,9 @@ export const useClerkLogin = () => {
       } else {
         toast.error("Additional verification required.");
       }
-    } catch (err: any) {
-      toast.error(err.errors?.[0]?.message || "Invalid credentials");
+    } catch (err: unknown) {
+      const error = err as { errors?: Array<{ message: string }> };
+      toast.error(error.errors?.[0]?.message || "Invalid credentials");
     } finally {
       setIsLoading(false);
     }
