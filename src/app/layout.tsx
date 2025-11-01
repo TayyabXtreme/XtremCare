@@ -1,5 +1,5 @@
 import { Outfit } from "next/font/google";
-import { Toaster } from "react-hot-toast";
+import { Toaster } from "sonner";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import { ReactNode } from "react";

@@ -5,16 +5,14 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Heart, Menu, X, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import { SignInButton, SignUpButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
+import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
@@ -71,39 +69,42 @@ export const Navbar = () => {
           {/* Right Side - Theme Toggle & Auth */}
           <div className="flex items-center gap-4">
             {/* Theme Toggle */}
-            {mounted && (
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="w-10 h-10 rounded-lg hover:bg-green-100 dark:hover:bg-green-900 transition-colors"
-              >
-                {theme === "dark" ? (
-                  <Sun className="w-5 h-5 text-gray-700 dark:text-gray-300" />
-                ) : (
-                  <Moon className="w-5 h-5 text-gray-700 dark:text-gray-300" />
-                )}
-              </Button>
-            )}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="w-10 h-10 rounded-lg hover:bg-green-100 dark:hover:bg-green-900 transition-colors"
+            >
+              {theme === "dark" ? (
+                <Sun className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+              ) : (
+                <Moon className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+              )}
+            </Button>
 
             {/* Auth Buttons - Desktop */}
             <div className="hidden md:flex items-center gap-3">
               <SignedOut>
-                <SignInButton mode="modal">
+                <Link href="/login">
                   <Button
                     variant="ghost"
                     className="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 hover:bg-green-50 dark:hover:bg-green-950"
                   >
                     Sign In
                   </Button>
-                </SignInButton>
-                <SignUpButton mode="modal">
+                </Link>
+                <Link href="/register">
                   <Button className="bg-green-600 hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 text-white rounded-full px-6">
                     Get Started
                   </Button>
-                </SignUpButton>
+                </Link>
               </SignedOut>
               <SignedIn>
+                <Link href="/dashboard">
+                  <Button className="bg-green-600 hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 text-white rounded-full px-6">
+                    Dashboard
+                  </Button>
+                </Link>
                 <UserButton
                   appearance={{
                     elements: {
@@ -146,21 +147,26 @@ export const Navbar = () => {
               ))}
               <div className="flex flex-col gap-2 pt-4 border-t border-green-200/50 dark:border-green-800/50">
                 <SignedOut>
-                  <SignInButton mode="modal">
+                  <Link href="/login">
                     <Button
                       variant="outline"
                       className="w-full border-green-600 dark:border-green-500 text-green-600 dark:text-green-400 hover:bg-green-50 dark:hover:bg-green-950"
                     >
                       Sign In
                     </Button>
-                  </SignInButton>
-                  <SignUpButton mode="modal">
+                  </Link>
+                  <Link href="/register">
                     <Button className="w-full bg-green-600 hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 text-white">
                       Get Started
                     </Button>
-                  </SignUpButton>
+                  </Link>
                 </SignedOut>
                 <SignedIn>
+                  <Link href="/dashboard">
+                    <Button className="w-full bg-green-600 hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 text-white">
+                      Dashboard
+                    </Button>
+                  </Link>
                   <div className="flex items-center justify-center py-2">
                     <UserButton
                       appearance={{

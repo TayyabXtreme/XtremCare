@@ -60,7 +60,7 @@ export const ProblemSolution = () => {
               In sab files, reports, aur follow-ups ko manage karna bohot mushkil ho jata hai.
             </p>
             <p className="text-xl font-semibold text-green-700 dark:text-green-400 leading-relaxed">
-              Jab doctor poochta hai <span className="italic">"Pichlay reports laao"</span>, 
+              Jab doctor poochta hai <span className="italic">&quot;Pichlay reports laao&quot;</span>, 
               toh hum WhatsApp ya purane folders mein dhoondte reh jaate hain 😩
             </p>
           </div>

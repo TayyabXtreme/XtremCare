@@ -91,7 +91,7 @@ export const Testimonials = () => {
 
               {/* Testimonial Text */}
               <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed relative z-10">
-                "{testimonial.text}"
+                &quot;{testimonial.text}&quot;
               </p>
 
               {/* Author */}
