@@ -4,9 +4,12 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Heart, Shield, Calendar, Sparkles, Brain, FileText } from "lucide-react";
 import { useTheme } from "next-themes";
 import { SignUpButton } from '@clerk/nextjs';
+import { useRouter } from "next/navigation";
+
 
 export const Hero = () => {
   const { theme } = useTheme();
+  const router=useRouter()
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
@@ -54,8 +57,9 @@ export const Hero = () => {
 
           {/* Enhanced CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-            <SignUpButton mode="modal">
+           
               <Button 
+                onClick={()=>{router.push('/login')}}
                 size="lg" 
                 className="bg-gradient-to-r from-green-600 via-green-700 to-green-800 hover:from-green-700 hover:via-green-800 hover:to-green-900 dark:from-green-500 dark:via-green-600 dark:to-green-700 dark:hover:from-green-600 dark:hover:via-green-700 dark:hover:to-green-800 text-white px-10 py-8 text-xl font-bold rounded-full shadow-2xl hover:shadow-green-500/50 dark:hover:shadow-green-400/30 transition-all duration-500 group hover:scale-105 border-2 border-green-500/20"
               >
@@ -63,7 +67,7 @@ export const Hero = () => {
                 Get Started Free
                 <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
               </Button>
-            </SignUpButton>
+            
             <Button 
               size="lg" 
               variant="outline" 
