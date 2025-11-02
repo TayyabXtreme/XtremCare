@@ -6,6 +6,7 @@ import { Sidebar } from '@/components/dashboard/Sidebar';
 import { StatsCard } from '@/components/dashboard/StatsCard';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import FloatingChatButton from '@/components/dashboard/FloatingChatButton';
 import { 
   Heart, 
   Activity, 
@@ -427,6 +428,9 @@ const DashboardPage = () => {
           onUploadComplete={handleUploadComplete}
         />
       )}
+
+      {/* Floating Chat Button */}
+      <FloatingChatButton />
     </div>
   );
 };

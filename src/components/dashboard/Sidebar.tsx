@@ -17,16 +17,19 @@ import {
   Moon,
   Sun,
   User,
-  Edit
+  Edit,
+  MessageCircle
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTheme } from 'next-themes';
 import { SignOutButton, useUser } from '@clerk/nextjs';
 import ProfileModal from './ProfileModal';
+import HealthChatModal from './HealthChatModal';
 
 export const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showProfileModal, setShowProfileModal] = useState(false);
+  const [showChatModal, setShowChatModal] = useState(false);
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();
   const { user } = useUser();
@@ -134,6 +137,9 @@ export const Sidebar = () => {
 
           {/* Footer Actions */}
           <div className="p-4 border-t border-gray-200 dark:border-gray-800 space-y-3">
+            {/* AI Chat Button */}
+           
+
             {/* Profile Button */}
             <Button
               onClick={() => setShowProfileModal(true)}
@@ -143,6 +149,8 @@ export const Sidebar = () => {
               <User className="w-5 h-5" />
               <span>My Profile</span>
             </Button>
+
+            
 
             {/* Theme Toggle */}
             <Button
@@ -161,6 +169,14 @@ export const Sidebar = () => {
                   <span>Dark Mode</span>
                 </>
               )}
+            </Button>
+
+             <Button
+              onClick={() => setShowChatModal(true)}
+              className="w-full justify-start gap-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 dark:from-green-500 dark:to-green-600 text-white shadow-lg"
+            >
+              <MessageCircle className="w-5 h-5" />
+              <span>Health AI Chat</span>
             </Button>
 
             {/* Logout */}
@@ -185,6 +201,12 @@ export const Sidebar = () => {
           // Optionally refresh data or show success message
           console.log('Profile updated successfully');
         }}
+      />
+
+      {/* Health Chat Modal */}
+      <HealthChatModal
+        isOpen={showChatModal}
+        onClose={() => setShowChatModal(false)}
       />
     </>
   );

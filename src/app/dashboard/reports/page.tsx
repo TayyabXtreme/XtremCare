@@ -5,6 +5,7 @@ import { useUser } from '@clerk/nextjs';
 import { Sidebar } from '@/components/dashboard/Sidebar';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import FloatingChatButton from '@/components/dashboard/FloatingChatButton';
 import { 
   FileText, 
   AlertCircle, 
@@ -381,6 +382,9 @@ const ReportsPage = () => {
           report={selectedReport}
         />
       )}
+
+      {/* Floating Chat Button */}
+      <FloatingChatButton />
     </div>
   );
 };
