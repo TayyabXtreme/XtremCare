@@ -403,7 +403,7 @@ const DashboardPage = () => {
                 </p>
                 <Button
                   variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-green-600 text-sm sm:text-base px-4 py-2"
+                  className="border-white text-green-600 hover:bg-white hover:text-green-800 text-sm sm:text-base px-4 py-2"
                   onClick={() => window.location.href = '/dashboard/reports'}
                 >
                   View Detailed Analysis →

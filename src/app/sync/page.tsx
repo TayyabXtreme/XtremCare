@@ -90,13 +90,17 @@ const SyncData = () => {
         if (profile) {
           // User already has data synced, redirect to dashboard
           toast.success('Profile already exists! Redirecting to dashboard...');
-          router.push('/dashboard');
+          // Keep loading state while redirecting to prevent UI flash
+          setTimeout(() => {
+            router.push('/dashboard');
+          }, 800);
         } else {
           // No profile found, user can proceed with sync
           setIsCheckingUser(false);
         }
       } catch (error) {
         console.error('Error checking user profile:', error);
+        // On error, allow user to proceed with sync
         setIsCheckingUser(false);
       }
     };
@@ -245,7 +249,8 @@ const SyncData = () => {
       <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-green-100 dark:from-gray-950 dark:via-gray-900 dark:to-green-950 flex items-center justify-center">
         <div className="text-center">
           <Loader2 className="w-12 h-12 animate-spin text-green-600 dark:text-green-400 mx-auto mb-4" />
-          <p className="text-gray-600 dark:text-gray-400">Checking your profile...</p>
+          <p className="text-gray-600 dark:text-gray-400 font-medium">Verifying your profile...</p>
+          <p className="text-sm text-gray-500 dark:text-gray-500 mt-2">Please wait</p>
         </div>
       </div>
     );
