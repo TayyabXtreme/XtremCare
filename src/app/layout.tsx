@@ -1,5 +1,6 @@
 import { Outfit } from "next/font/google";
 import { Toaster } from "react-hot-toast";
+import { Toaster as Toasters } from "sonner";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import { ReactNode } from "react";
@@ -49,6 +50,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <body className={`${outfit.className} antialiased`}>
           <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
             <Toaster />
+             <Toasters />
             {children}
           </ThemeProvider>
         </body>
