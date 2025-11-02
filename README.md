@@ -1,134 +1,192 @@
 # 🏥 HealthMate - Sehat ka Smart Dost
 
-![HealthMate Banner](https://img.shields.io/badge/SMIT-Coding%20Night-green?style=for-the-badge)
-![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38bdf8?style=for-the-badge&logo=tailwind-css)
+![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase)
+![Clerk](https://img.shields.io/badge/Clerk-6C47FF?style=flat-square&logo=clerk)
 
-> **"Yeh sirf ek project nahi, ek real-life problem ka digital solution hai."**
+> **AI-powered medical report analyzer with bilingual summaries (English + Roman Urdu)**
 
-An AI-powered personal health companion app with bilingual (English + Roman Urdu) medical report analysis using Gemini AI.
+🔗 **Live Demo:** [https://healthmate-snowy.vercel.app/](https://healthmate-snowy.vercel.app/)  
+📦 **Repository:** [https://github.com/TayyabXtreme/XtremCare](https://github.com/TayyabXtreme/XtremCare)
 
-## 🌟 The Story
+---
 
-Every family has someone who needs regular tests and prescriptions. Managing all those files, reports, and follow-ups becomes very hard. When the doctor asks, **"Pichlay reports laao"**, we start digging through WhatsApp or old folders 😩.
+## 🎯 What is HealthMate?
 
-**HealthMate** solves this by providing a secure health vault where you can:
-- 📤 Upload medical reports (PDFs, images, X-rays)
-- 🧠 Get instant AI analysis in English & Roman Urdu
-- 📊 Track your health timeline & vitals
-- 💡 Receive doctor questions & health tips
+Managing medical reports is hard. HealthMate makes it simple:
+- 📤 Upload your lab reports, X-rays, prescriptions
+- � AI analyzes them instantly using **Google Gemini**
+- 📊 Get easy summaries in **English + Roman Urdu**
+- � Track all your health data in one place
 
-## ✨ Key Features
+---
 
-### 🤖 AI-Powered Analysis
-- **Gemini 1.5 Pro** reads and analyzes reports automatically
-- No manual OCR needed - just upload and go
-- Highlights abnormal values (WBC high, Hb low, etc.)
+## ✨ Features
 
-### 🌐 Bilingual Support
-- Summaries in **English + Roman Urdu**
-- "Samajhne ka asaan tareeqa" for everyone
-- Accessible to Urdu-speaking population
+- ✅ **AI Report Analysis** - Gemini 2.5 Flash reads PDFs & images
+- ✅ **Bilingual Summaries** - English + Roman Urdu explanations
+- ✅ **Secure Authentication** - Clerk (Email, Google, Apple)
+- ✅ **Health Dashboard** - Track vitals (BP, Sugar, BMI, Heart Rate)
+- ✅ **Medical Timeline** - View all reports chronologically
+- ✅ **Dark Mode** - Modern glassmorphic UI
+- ✅ **Mobile Responsive** - Works on all devices
 
-### 💬 Intelligent Insights
-- 3-5 suggested questions to ask your doctor
-- Dietary recommendations (foods to avoid/eat)
-- Home remedy suggestions
-- Always includes medical disclaimer
-
-### 🔒 Security First
-- JWT-based authentication
-- Encrypted user data
-- Signed URLs for file access
-- HIPAA-compliant practices
-
-## 🚀 Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
 ## 🛠️ Tech Stack
 
-### Frontend
-- **Next.js 16** - React 19 with App Router
-- **TypeScript** - Type-safe development
-- **Tailwind CSS 4** - Modern styling
-- **shadcn/ui** - Beautiful components
-- **next-themes** - Dark/Light mode
-- **Clerk** - Authentication
+| Category | Technology |
+|----------|-----------|
+| **Framework** | Next.js 16 (App Router) |
+| **Language** | TypeScript |
+| **Styling** | Tailwind CSS 4 + shadcn/ui |
+| **Authentication** | Clerk |
+| **Database** | Supabase (PostgreSQL) |
+| **AI Model** | Google Gemini 2.5 Flash |
+| **Deployment** | Vercel |
 
-### Backend (Planned)
-- **Node.js** (Express/NestJS)
-- **MongoDB Atlas** - Database
-- **Gemini 1.5 Pro** - AI Analysis
-- **OpenRouter** - AI Gateway
-- **Cloudinary** - File storage
+---
 
-## 🎨 Design Features
+## � Quick Start
 
-- ✨ **Glassmorphism** - Frosted glass effects
-- 🌓 **Dark/Light Mode** - Full theme support
-- 💚 **Healthcare Colors** - Green, black, white
-- 🎭 **Smooth Animations** - Professional UX
-- 📱 **Fully Responsive** - Mobile-first design
+### Prerequisites
+- Node.js 18+ installed
+- Supabase account
+- Clerk account
+- Google AI API key
 
-## 📱 Landing Page Sections
+### Installation
 
-1. **Hero** - Sehat ka Smart Dost with compelling CTA
-2. **Problem & Solution** - Real-life story showcase
-3. **Features** - 9 key features powered by Gemini AI
-4. **How It Works** - 4-step process explanation
-5. **Testimonials** - User stories (English + Urdu)
-6. **Call-to-Action** - Contact form & benefits
-7. **Footer** - Links and developer credits
+1. **Clone the repository**
+```bash
+git clone https://github.com/TayyabXtreme/XtremCare.git
+cd XtremCare
+```
+
+2. **Install dependencies**
+```bash
+npm install
+```
+
+3. **Setup environment variables**
+```bash
+cp .env.example .env.local
+```
+
+Edit `.env.local` with your keys:
+```env
+# Clerk Authentication
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
+
+# Supabase
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+
+# Google Gemini AI
+GEMINI_API_KEY=your_gemini_api_key
+```
+
+4. **Run development server**
+```bash
+npm run dev
+```
+
+5. **Open [http://localhost:3000](http://localhost:3000)**
+
+---
+
+## � Project Structure
+
+```
+src/
+├── app/                    # Next.js pages
+│   ├── dashboard/         # Protected dashboard routes
+│   ├── login/             # Authentication pages
+│   └── register/          
+├── components/            
+│   ├── dashboard/         # Dashboard components
+│   ├── landing/           # Landing page sections
+│   └── ui/                # shadcn/ui components
+├── hooks/                 # Custom React hooks
+├── utils/
+│   ├── ai/                # Gemini AI integration
+│   └── supabase/          # Database utilities
+└── middleware.ts          # Clerk auth middleware
+```
+
+---
+
+## 🔐 Environment Setup
+
+### Get Clerk Keys
+1. Go to [clerk.com](https://clerk.com)
+2. Create a new application
+3. Enable Email, Google, Apple providers
+4. Copy API keys from dashboard
+
+### Get Supabase Keys
+1. Go to [supabase.com](https://supabase.com)
+2. Create new project
+3. Get URL and anon key from Settings → API
+
+### Get Gemini API Key
+1. Go to [ai.google.dev](https://ai.google.dev)
+2. Create API key
+3. Enable Gemini API
+
+
+---
+
+## 📸 Screenshots
+
+### Landing Page
+Modern glassmorphic design with smooth animations
+
+### Dashboard
+Track your health metrics and recent reports
+
+### AI Analysis
+Get bilingual summaries with highlighted abnormalities
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+---
 
 ## ⚠️ Disclaimer
 
-**Important:** This AI is for understanding only, not for medical advice.
+This application provides AI-powered analysis for educational purposes only. Always consult with qualified healthcare professionals for medical advice.
 
-**Roman Urdu:** Yeh AI sirf samajhne ke liye hai, ilaaj ke liye nahi. Always consult your doctor before making any decision.
+**Roman Urdu:** Yeh app sirf samajhne ke liye hai. Apne doctor se zaroor consult karein.
+
+---
 
 ## 👨‍💻 Developer
 
-**Muhammad Tayyab (TayyabXtreme)**
+**Muhammad Tayyab**
 
 - 🐙 GitHub: [@TayyabXtreme](https://github.com/TayyabXtreme)
 - 💼 LinkedIn: [muhammad-tayyab-xtreme](https://www.linkedin.com/in/muhammad-tayyab-xtreme)
-- 🏆 Project: SMIT Coding Night Hackathon
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📄 License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project is open source and available under the MIT License.
 
 ---
 
 <div align="center">
 
-**Built with ❤️ for SMIT Coding Night**
+**Built with ❤️ for better healthcare accessibility**
 
-*Making healthcare accessible, one report at a time.*
-
-![Made with Love](https://img.shields.io/badge/Made%20with-Love-red?style=for-the-badge)
-![SMIT](https://img.shields.io/badge/SMIT-Coding%20Night-green?style=for-the-badge)
+![Made with Next.js](https://img.shields.io/badge/Made%20with-Next.js-black?style=flat-square&logo=next.js)
+![Powered by AI](https://img.shields.io/badge/Powered%20by-Gemini%20AI-4285F4?style=flat-square&logo=google)
 
 </div>
 
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
