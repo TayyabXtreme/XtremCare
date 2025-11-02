@@ -99,13 +99,11 @@ export const HowItWorks = () => {
           <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
             {[
               "React / Next.js",
-              "Gemini 1.5 Pro",
-              "OpenRouter",
-              "MongoDB Atlas",
+              "Gemini 2.5 Flash",
+              "Supabase",
               "Node.js",
-              "Cloudinary",
-              "JWT Auth",
-              "Tailwind CSS",
+              "Clerk",
+              "ShedCn",
             ].map((tech, index) => (
               <div
                 key={index}
