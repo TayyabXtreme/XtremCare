@@ -155,50 +155,10 @@ export default function RegisterPage() {
           </div>
 
           {/* OAuth Buttons */}
-          <div className="flex gap-3 mb-4">
-            <Button
-              onClick={() => signupWithOAuth('oauth_google')}
-              variant="outline"
-              className="flex-1 h-11 border-2 border-gray-200 dark:border-gray-700 hover:border-green-500 dark:hover:border-green-400 hover:bg-green-50 dark:hover:bg-green-950 transition-all duration-300"
-              type="button"
-            >
-              <Image
-                src="/google.svg"
-                alt="Google"
-                width={20}
-                height={20}
-                className="flex-shrink-0"
-              />
-            </Button>
+        
 
-            <Button
-              onClick={() => signupWithOAuth('oauth_apple')}
-              variant="outline"
-              className="flex-1 h-11 border-2 border-gray-200 dark:border-gray-700 hover:border-green-500 dark:hover:border-green-400 hover:bg-green-50 dark:hover:bg-green-950 transition-all duration-300"
-              type="button"
-            >
-              <Image
-                src="/apple.svg"
-                alt="Apple"
-                width={20}
-                height={20}
-                className="flex-shrink-0"
-              />
-            </Button>
-          </div>
-
-          {/* Divider */}
-          <div className="relative mb-4">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-gray-300 dark:border-gray-600"></div>
-            </div>
-            <div className="relative flex justify-center text-sm">
-              <span className="px-4 bg-white/60 dark:bg-gray-800/60 text-gray-600 dark:text-gray-400">
-                Or sign up with email
-              </span>
-            </div>
-          </div>
-
+        
+         
           {/* Signup Form */}
           <form onSubmit={handleSignup} className="space-y-3">
             <div id="clerk-captcha" />
